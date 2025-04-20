@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <link rel="icon" href="logo.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="BBB EGG - Telur Asin Omega Bu Widya di Bekasi. Telur asin berkualitas di Alinda, Kaliabang. Tersedia telur asin omega, manik merah frozen, dan telur asin untuk hantaran.">
+    <meta name="keywords" content="telur asin Bekasi, telur asin alinda, telur asin kaliabang, telur asin omega, BBB EGG, Bu Widya">
+    <title>BBB EGG - Telur Asin Omega Bu Widya | Bekasi</title>
+    <style>
+        :root {
+            --primary-color: #f8b500;
+            --secondary-color: #ff6b6b;
+            --dark-color: #333;
+            --light-color: #f4f4f4;
+            --success-color: #28a745;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f9f9f9;
+            line-height: 1.6;
+            color: var(--dark-color);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            margin-right: auto; 
+            padding-left: 40px; 
+        }
+        
+        .logo img {
+            width: 60px;
+            height: 60px;
+        }
+        
+        .logo-text {
+            margin-left: 10px;
+        }
+        
+        .logo-text h1 {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        
+        .logo-text p {
+            font-size: 14px;
+            color: var(--dark-color);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 20px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        nav ul li a:hover {
+            color: var(--primary-color);
+        }
+        
+        #menu-toggle {
+            display: none;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('telor2.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            color: white;
+            margin-top: 90px;
+        }
+        
+        .hero-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: background-color 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            background-color: #e0a500;
+        }
+        
+        /* About Section */
+        .about {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary-color);
+        }
+        
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+            padding-right: 30px;
+        }
+        
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
+        
+        .about-image img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        /* Products Section */
+        .products {
+            padding: 80px 0;
+            background-color: #f9f9f9;
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .product-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .product-img {
+            height: 300px;
+            overflow: hidden;
+        }
+        
+        .product-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .product-card:hover .product-img img {
+            transform: scale(1.1);
+        }
+        
+        .product-info {
+            padding: 20px;
+        }
+        
+        .product-info h3 {
+            margin-bottom: 10px;
+            color: var(--dark-color);
+        }
+        
+        .product-info p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+        
+        .product-price {
+            font-weight: bold;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+        
+        .order-button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            text-align: center;
+            width: 100%;
+        }
+        
+        .order-button:hover {
+            background-color: #e0a500;
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        
+        .contact-info {
+            margin-top: 50px;
+            flex: 1;
+            min-width: 300px;
+            margin-right: 30px;
+        }
+        
+        .contact-form {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .info-item {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .info-item i {
+            margin-right: 15px;
+            font-size: 20px;
+            color: var(--primary-color);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        
+        textarea.form-control {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        .submit-button {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        
+        .submit-button:hover {
+            background-color: #e0a500;
+        }
+        
+        .map-container {
+            margin-top: 40px;
+            height: 400px;
+            width: 100%;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 60px 0 20px;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+        
+        .footer-column {
+            flex: 1;
+            min-width: 200px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-column h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--primary-color);
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column ul li a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-column ul li a:hover {
+            color: var(--primary-color);
+        }
+        
+        .social-links {
+            display: flex;
+            margin-top: 15px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            margin-right: 10px;
+            color: white;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--primary-color);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        /* Responsive Styles */
+        @media screen and (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .logo {
+                margin-bottom: 15px;
+                justify-content: center;
+            }
+            
+            #menu-toggle {
+                display: block;
+                position: absolute;
+                top: 25px;
+                right: 20px;
+                font-size: 24px;
+                cursor: pointer;
+            }
+            
+            nav ul {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                text-align: center;
+                padding: 10px 0;
+            }
+            
+            nav ul.show {
+                display: flex;
+            }
+            
+            nav ul li {
+                margin: 10px 0;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .about-content, .contact-container {
+                flex-direction: column;
+            }
+            
+            .about-text, .contact-info {
+                padding-right: 0;
+                margin-bottom: 30px;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="logo.png" alt="BBB EGG Logo">
+                <div class="logo-text">
+                    <h1>BBB EGG</h1>
+                    <p>Telur Asin Omega Bu Widya</p>
+                </div>
+            </div>
+            <div id="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Beranda</a></li>
+                    <li><a href="#about">Tentang Kami</a></li>
+                    <li><a href="#products">Produk</a></li>
+                    <li><a href="#order" class="cta-button">Pesan Sekarang</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Telur Asin Omega BBB EGG</h2>
+                <p>Telur asin premium kaya omega dengan cita rasa lezat dan sehat untuk keluarga Anda</p>
+                <a href="#order" class="cta-button">Pesan Sekarang</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">Tentang Kami</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Telur Asin Omega Bu Widya - BBB EGG</h3>
+                    <p>Selamat datang di BBB EGG, produsen telur asin omega premium yang berlokasi di Bekasi. Sejak berdiri, kami telah berkomitmen untuk menghadirkan telur asin berkualitas tinggi dengan cita rasa yang khas dan kandungan omega yang baik untuk kesehatan.</p>
+                    <p>Telur asin kami diproses dengan metode tradisional yang dipadukan dengan teknologi modern untuk menghasilkan telur asin dengan kualitas terbaik. Kuning telur yang creamy dengan kandungan omega yang kaya menciptakan sensasi rasa yang tak terlupakan.</p>
+                    <p>Kami hanya menggunakan bahan-bahan berkualitas dan proses pengolahan yang higienis untuk memastikan produk kami aman dan sehat untuk dikonsumsi oleh seluruh keluarga.</p>
+                </div>
+                <div class="about-image">
+                    <img src="prosestelor.jpg" alt="Proses Pembuatan Telur Asin BBB EGG">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products">
+        <div class="container">
+            <h2 class="section-title">Produk Kami</h2>
+            <div class="products-grid">
+                <!-- Product 1 -->
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="omega.jpg" alt="Telur Asin Omega">
+                    </div>
+                    <div class="product-info">
+                        <h3>Telur Asin Omega</h3>
+                        <p>Telur asin premium dengan kuning telur berminyak dan kaya akan omega yang baik untuk kesehatan.</p>
+                        <div class="product-price">Harga Terjangkau!</div>
+                        <a href="https://wa.me/+6285771972771?text=Assalamualaikum,%20saya%20ingin%20memesan%20Telur%20Asin%20Omega" class="order-button">Pesan Sekarang</a>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="frozen.jpg" alt="Manik Merah Frozen">
+                    </div>
+                    <div class="product-info">
+                        <h3>Manik Merah Frozen</h3>
+                        <p>Olahan kuning telur asin yang dibekukan, praktis untuk topping dan campuran berbagai masakan.</p>
+                        <div class="product-price">Harga Terjangkau!</div>
+                        <a href="https://wa.me/+6285771972771?text=Assalamualaikum,%20saya%20ingin%20memesan%20Manik%20Merah%20Frozen" class="order-button">Pesan Sekarang</a>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="telor2.jpg" alt="Telur Asin untuk Hantaran">
+                    </div>
+                    <div class="product-info">
+                        <h3>Telur Asin untuk Hantaran</h3>
+                        <p>Paket telur asin premium dalam kemasan menarik yang cocok untuk hantaran dan kado.</p>
+                        <div class="product-price">Harga Terjangkau!</div>
+                        <a href="https://wa.me/+6285771972771?text=Assalamualaikum,%20saya%20ingin%20memesan%20Telur%20Asin%20untuk%20Hantaran" class="order-button">Pesan Sekarang</a>
+                    </div>
+                </div>
+                
+                <!-- Product 4 -->
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="paketkeluarga.jpg" alt="Paket Hemat Keluarga">
+                    </div>
+                    <div class="product-info">
+                        <h3>Paket Hemat Keluarga</h3>
+                        <p>Telur asin omega isi 10 butir dengan harga spesial untuk kebutuhan keluarga.</p>
+                        <div class="product-price">Harga Terjangkau!</div>
+                        <a href="https://wa.me/+6285771972771?text=Assalamualaikum,%20saya%20ingin%20memesan%20Telur%20Asin%20Paket%20Hemat%20Keluarga" class="order-button">Pesan Sekarang</a>
+                    </div>
+                </div>
+                
+                <!-- Product 5 -->
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="gojek.jpg" alt="Online Delivery">
+                    </div>
+                    <div class="product-info">
+                        <h3>Online Delivery</h3>
+                        <p>Kami menerima pesanan online delivery</p>
+                        <div class="product-price">Harga Terjangkau!</div>
+                        <a href="https://wa.me/+6285771972771?text=Assalamualaikum,%20saya%20ingin%20memesan%20Telur%20Asin%20Online%20Delivery" class="order-button">Pesan Sekarang</a>
+                    </div>
+                </div>
+                
+                <!-- Product 6 -->
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="telor1.jpg" alt="">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-price">Harga Terjangkau!</div>
+                        <a href="https://wa.me/+6285771972771?text=Assalamualaikum,%20saya%20ingin%20memesan%20Telur%20Asin" class="order-button">Pesan Sekarang</a>
+                    </div>
+                </div>
+                
+                <!-- Product 7 -->
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="telor3.jpg" alt="">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-price">Harga Terjangkau!</div>
+                        <a href="https://wa.me/+6285771972771?text=Assalamualaikum,%20saya%20ingin%20memesan%20Telur%20Asin" class="order-button">Pesan Sekarang</a>
+                    </div>
+                </div>
+                
+                <!-- Product 8 -->
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="telor4.jpg" alt="">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-price">Harga Terjangkau!</div>
+                        <a href="https://wa.me/+6285771972771?text=Assalamualaikum,%20saya%20ingin%20memesan%20Telur%20Asin" class="order-button">Pesan Sekarang</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Section -->
+    <section id="order" class="contact">
+        <div class="container">
+            <h2 class="section-title">Pesan Sekarang</h2>
+            <div class="contact-container">
+                <div class="contact-form">
+                    <form id="orderForm">
+                        <div class="form-group">
+                            <label for="name">Nama Lengkap</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="address">Alamat Pengiriman</label>
+                            <textarea id="address" class="form-control" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="pesanan">Pesanan Anda</label>
+                            <textarea id="pesanan" class="form-control" placeholder="Contoh: Telur Asin Omega 20 butir, Manik Merah Frozen 1 pack" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-button">Kirim Pesanan via WhatsApp</button>
+                    </form>
+                </div>
+
+
+                <div class="contact-info">
+                    <h3>Informasi Pemesanan</h3>
+                    <p>Untuk pemesanan, Anda dapat mengisi form di samping atau menghubungi kami langsung melalui:</p>
+                    
+                    <div class="info-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <div>
+                            <h4>Telepon / WhatsApp</h4>
+                            <p><a href="https://wa.me/+6285771972771?text=Assalamualaikum,%20saya%20ingin%20memesan%20Telur%20Asin">0857-7197-2771</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Alamat Toko</h4>
+                            <p>Perumahan Alinda Jl Ceri 1 Blok M5 No 1 RT 14 RW 21, RT.008/RW.027, Kaliabang Tengah, Kec. Bekasi Utara, Kota Bekasi, Jawa Barat 17125</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>Jam Operasional</h4>
+                            <p>Setiap Hari: 08:00 - 20:00 WIB</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <i class="fas fa-truck"></i>
+                        <div>
+                            <h4>Pengiriman</h4>
+                            <p>Kami melayani pengiriman online ke seluruh wilayah Bekasi dan sekitarnya</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d63464.7709873582!2d106.92479829999999!3d-6.196801599999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNsKwMTEnNDguNSJTIDEwN8KwMDAnMjUuOSJF!5e0!3m2!1sid!2sid!4v1713671325628!5m2!1sid!2sid" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+
+            <div style="text-align: center; margin-top: 20px;">
+                <a href="https://www.google.com/maps/dir//Perumahan+Alinda+Jl+Ceri+1+Blok+M5+No+1+RT+14+RW+21,+RT.008%2FRW.027,+Kaliabang+Tengah,+Kec.+Bekasi+Utara,+Kota+Bks,+Jawa+Barat+17125/@-6.1968016,106.9247983,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x2e69890c54d08b07:0xf8b191934f26717b!2m2!1d107.0072002!2d-6.196808?entry=ttu&g_ep=EgoyMDI1MDQxNi4xIKXMDSoASAFQAw%3D%3D" target="_blank" class="cta-button">
+                    <i class="fas fa-directions"></i> Petunjuk Arah ke Lokasi
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>BBB EGG</h3>
+                    <p>Telur Asin Omega Bu Widya, produk telur asin berkualitas tinggi dari Bekasi dengan cita rasa lezat dan kandungan omega yang baik untuk kesehatan.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/+6285771972771?text=Assalamualaikum,%20saya%20ingin%20memesan%20Telur%20Asin"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Menu Utama</h3>
+                    <ul>
+                        <li><a href="#home">Beranda</a></li>
+                        <li><a href="#about">Tentang Kami</a></li>
+                        <li><a href="#products">Produk</a></li>
+                        <li><a href="#order">Pesan Sekarang</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+    <h3>Produk Kami</h3>
+    <ul>
+        <li><a href="#products">Telur Asin Omega</a></li>
+        <li><a href="#products">Manik Merah Frozen</a></li>
+        <li><a href="#products">Telur Asin untuk Hantaran</a></li>
+        <li><a href="#products">Paket Hemat Keluarga</a></li>
+        <li><a href="#products">Premium Gift Box</a></li>
+    </ul>
+</div>
+
+<div class="footer-column">
+    <h3>Kontak Kami</h3>
+    <ul>
+        <li><i class="fas fa-phone-alt"></i> <a href="https://wa.me/+6285771972771?text=Assalamualaikum,%20saya%20ingin%20memesan%20Telur%20Asin">0857-7197-2771</a></li>
+        <li><i class="fas fa-map-marker-alt"></i> Perumahan Alinda Jl Ceri 1 Blok M5 No 1, Kaliabang Tengah, Bekasi Utara</li>
+        <li><i class="fas fa-clock"></i> Setiap Hari: 08:00 - 20:00 WIB</li>
+    </ul>
+</div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 BBB EGG - Telur Asin Omega Bu Widya. All Rights Reserved.</p>
+                <p>Telur Asin Bekasi | Telur Asin Alinda | Telur Asin Kaliabang</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('show');
+        });
+
+        // Form Submission to WhatsApp
+        document.getElementById('orderForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const address = document.getElementById('address').value;
+            const pesanan = document.getElementById('pesanan').value;
+            
+            let message = `Assalamualaikum, saya ingin order%0A`;
+            message += `Nama: ${name}%0A`;
+            message += `Alamat: ${address}%0A`;
+            message += `Pesanan: ${pesanan}%0A`;
+            message += `Mohon diproses. Terima kasih.`;
+            
+            window.open(`https://wa.me/+6285771972771?text=${message}`, '_blank');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 90,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    document.querySelector('nav ul').classList.remove('show');
+                }
+            });
+        });
+
+        // Add schema.org structured data for SEO
+        const schema = document.createElement('script');
+        schema.type = 'application/ld+json';
+        schema.text = JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "BBB EGG - Telur Asin Omega Bu Widya",
+            "image": "logo.png",
+            "@id": "https://naufalwebdev.github.io/bbbegg",
+            "url": "https://naufalwebdev.github.io/bbbegg",
+            "telephone": "+6285771972771",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Perumahan Alinda Jl Ceri 1 Blok M5 No 1 RT 14 RW 21",
+                "addressLocality": "Bekasi Utara",
+                "postalCode": "17125",
+                "addressRegion": "Jawa Barat",
+                "addressCountry": "ID"
+            },
+            "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": -6.1899822,
+                "longitude": 107.0047204
+            },
+            "openingHoursSpecification": {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": [
+                    "Monday",
+                    "Tuesday",
+                    "Wednesday",
+                    "Thursday",
+                    "Friday",
+                    "Saturday",
+                    "Sunday"
+                ],
+                "opens": "08:00",
+                "closes": "20:00"
+            },
+            "sameAs": [
+                "https://naufalwebdev.github.io/bbbegg",
+                "https://naufalwebdev.github.io/bbbegg"
+            ]
+        });
+        document.head.appendChild(schema);
+    </script>
+</body>
+</html>
